@@ -2,11 +2,14 @@ import requests
 from datetime import datetime
 import smtplib
 import time
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 MY_LAT = 51.507351 # Your latitude
 MY_LONG = -0.127758 # Your longitude
-MY_EMAIl = "praiseisawesome52@gmail.com"
-MY_PASSWORD = "erua aayt wzga zlkd"
+MY_EMAIl = os.getenv('MY_EMAIL')
+MY_PASSWORD = os.getenv('MY_PASSWORD')
 
 #Your position is within +5 or -5 degrees of the ISS position.
 def is_iss_overhead():
